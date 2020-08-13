@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electron API Realization</title>
+    <link rel="stylesheet" href="./frontend/index_style.css">
+    <script src="./frontend/index.js"></script>
+</head>
+<body>
+    <div id="aboutpage" class="aboutpage">
+        <h1>First Electron App</h1>
+        <button class="startbtn" id="about-page-btn" onclick="hideAboutPage(document)">Start Browsing</button>
+    </div>
+    <div id="mainpage" style="visibility: hidden;">
+        <nav class="leftnav">
+            <div class="nav-category">
+                <button class="nav-button" onclick="clickSection('window', document)">
+                    <span>manage</span>
+                    <b>windows</b>
+                </button>
+            </div>
+            <div class="nav-category">
+                <button class="nav-button">
+                    <span>customize</span>
+                    <b>menus</b>
+                </button>
+            </div>
+        </nav>
+
+        <div class="right-content">
+            <section class="content-section hide" id='window'>
+                <button class="demo-button" id="windowDemoBtn" onclick="showDemoContent(this.id, document)">
+                    <div class="demo-button-sign">
+                        <p class="demo-vertical-line upper"></p>
+                        <p class="demo-vertical-line lower"></p>
+                    </div>
+                    <h1>Create Window Demo</h1>
+                </button>
+                <div class="demo-box">
+                    <button id="openwindowBtn" onclick="window.functions.openNewWindow()">Open a window</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

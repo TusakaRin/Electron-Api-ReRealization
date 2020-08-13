@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.startbtn {
+    cursor: pointer;
+    border-radius: 4px;
+    width: 150px;
+    height: 50px;
+    font-size: large;
+    background-color: white;
+}
+
+#mainpage {
+    display: flex;
+    height: 100%;
+}
+
+.leftnav {
+    width: 300px;
+    background-color: grey;
+    display: block;
+}
+
+.nav-button {
+    padding: 20px;
+    width: 100%;
+    background-color: #999999;
+    border-style: ridge;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #a1a1a1;
+}
+
+.right-content-div {
+    flex: 1;
+}
+
+.right-content .hide {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.demo-button {
+    background-color: rgba(0, 0, 0, 0);
+    border-style: hidden;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.demo-button-sign {
+    vertical-align: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.demo-vertical-line {
+    height: 20px;
+    width: 5px;
+    background-color: black;
+    margin-right: 2px;
+    border-style: hidden;
+    transition: 0.2s;
+}
+
+.demo-vertical-line.upper {
+    margin-top: 5px;
+    transform: rotate(-30deg) scale(0.9) translateY(5px);
+}
+
+.demo-vertical-line.lower {
+    margin-bottom: 5px;
+    background-color: black;
+    transform: rotate(30deg) scale(0.9) translateY(-5px);
+}
+
+.demo-vertical-line.expand {
+    transform: rotate(0deg);
+}
