@@ -15,13 +15,13 @@
     <div id="mainpage" style="visibility: hidden;">
         <nav class="leftnav">
             <div class="nav-category">
-                <button class="nav-button" onclick="clickSection('window', document)">
+                <button class="nav-button" id="window-section-button" onclick="clickSection('window', document, this.id)">
                     <span>manage</span>
                     <b>windows</b>
                 </button>
             </div>
             <div class="nav-category">
-                <button class="nav-button">
+                <button class="nav-button" id="menu-section-button" onclick="clickSection('menu', document, this.id)">
                     <span>customize</span>
                     <b>menus</b>
                 </button>
@@ -29,17 +29,82 @@
         </nav>
 
         <div class="right-content">
+            <!--Window Section-->
             <section class="content-section hide" id='window'>
-                <button class="demo-button" id="windowDemoBtn" onclick="showDemoContent(this.id, document)">
-                    <div class="demo-button-sign">
-                        <p class="demo-vertical-line upper"></p>
-                        <p class="demo-vertical-line lower"></p>
-                    </div>
-                    <h1>Create Window Demo</h1>
-                </button>
-                <div class="demo-box">
-                    <button id="openwindowBtn" onclick="window.functions.openNewWindow()">Open a window</button>
+                <div class="section-header">
+                    <h1 class="title">Windows Related APIs</h1>
+                    <p class="content">This section is about api related to windows, including creation, state management, blur and focus and frameless windows</p>
+                    <p class="separate-line"></p>
                 </div>
+                <!--Create Window-->
+                <div class="demo-wrapper windowCreation">
+                    <button class="demo-button" id="windowCreationDemoBtn" onclick="showDemoContent(this.id, document)">
+                        <div class="demo-button-sign">
+                            <p class="demo-vertical-line upper"></p>
+                            <p class="demo-vertical-line lower"></p>
+                        </div>
+                        <h1>Create Window Demo</h1>
+                    </button>
+                    <div class="demo-box-wrapper">
+                        <p class="demo-box arrow"></p>
+                        <div class="demo-box box">
+                            <button id="openwindowBtn" onclick="window.functions.openNewWindow()">Open a window</button>
+                        </div>
+                    </div>
+                </div> 
+                <!--Move Window-->
+                <div class="demo-wrapper windowManageState">
+                    <button class="demo-button" id="windowStateDemoBtn" onclick="showDemoContent(this.id, document)">
+                        <div class="demo-button-sign">
+                            <p class="demo-vertical-line upper"></p>
+                            <p class="demo-vertical-line lower"></p>
+                        </div>
+                        <h1>Move Window Demo</h1>
+                    </button>
+                    <div class="demo-box-wrapper">
+                        <p class="demo-box arrow"></p>
+                        <div class="demo-box box">
+                            <button onclick="window.functions.windowListenReszie()">Create a new window and listen for move and resize</button>
+                            <p id="manage-window-reply">Move and resize the window, you will see info here.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Blur and focus-->
+                <div class="demo-wrapper windowBlurFocus">
+                    <button class="demo-button" id="windowBlurFocusDemoBtn" onclick="showDemoContent(this.id, document)">
+                        <div class="demo-button-sign">
+                            <p class="demo-vertical-line upper"></p>
+                            <p class="demo-vertical-line lower"></p>
+                        </div>
+                        <h1>Blur and Focus Window Demo</h1>
+                    </button>
+                    <div class="demo-box-wrapper">
+                        <p class="demo-box arrow"></p>
+                        <div class="demo-box box">
+                            <button onclick="window.functions.windowListenBlurFocus()">Show Window</button>
+                            <button id="focusBtn">Focus</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Frameless Window-->
+                <div class="demo-wrapper windowFrameless">
+                    <button class="demo-button" id="windowFramelessBtn" onclick="showDemoContent(this.id, document)">
+                        <div class="demo-button-sign">
+                            <p class="demo-vertical-line upper"></p>
+                            <p class="demo-vertical-line lower"></p>
+                        </div>
+                        <h1>Blur and Focus Window Demo</h1>
+                    </button>
+                    <div class="demo-box-wrapper">
+                        <p class="demo-box arrow"></p>
+                        <div class="demo-box box">
+                            <button onclick="window.functions.showFramelessWindow()">Show Frameless Window</button>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+            <section class="content-section hide" id='menu'>
+                <h1>menu demos</h1>
             </section>
         </div>
     </div>
